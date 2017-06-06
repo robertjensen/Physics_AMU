@@ -19,7 +19,9 @@ n = 0
 while n > -1:
     n = page.find(start_word, n+1)
     m = page.find(end_word, n)
-    names.append(page[n + len(start_word)+1:m])
+    name = page[n + len(start_word)+1:m]
+    name = name.replace('  ', ' ')
+    names.append(name)
 names.pop()
 
 trello = json.loads(trello_page)
